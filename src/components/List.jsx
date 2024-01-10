@@ -51,7 +51,7 @@ const List = ({ id, job, isDone, deleteTask, doneTask, updateTaskJob }) => {
             />
             <label
               htmlFor={`list` + id}
-              className={`${isDone && "line-through opacity-80"} select-none`}
+              className={`${isDone && " opacity-80"} select-none`}
             >
               {job}
             </label>
