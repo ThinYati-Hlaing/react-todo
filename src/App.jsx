@@ -43,10 +43,6 @@ const App = () => {
       <CreateForm addTask={addTask} />
       <Status tasks={tasks} />
       <ListGroup doneAllTask={doneAllTask} updateTaskJob={updateTaskJob} deleteTask={deleteTask} doneTask={doneTask} tasks={tasks} />
-      {/* <Counter /> */}
-      {/* <Input /> */}
-      {/* <Checker /> */}
-      {/* {<AccordionGroup />} */}
     </div>
   );
 };
