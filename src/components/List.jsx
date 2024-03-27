@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EditInput from "./EditInput";
 
 const List = ({ id, job, isDone, deleteTask, doneTask, updateTaskJob }) => {
   const [edit, setEdit] = useState(false);
@@ -21,7 +22,6 @@ const List = ({ id, job, isDone, deleteTask, doneTask, updateTaskJob }) => {
   }
 
   const handleUpdateInputBlur = () => {
-    console.log("U exit");
     setEdit(false);
     updateTaskJob(id, updateInput);
   };
@@ -36,10 +36,7 @@ const List = ({ id, job, isDone, deleteTask, doneTask, updateTaskJob }) => {
     <div className="list">
       <div className="group border mb-3 overflow-hidden border-neutral-700 p-5 flex justify-between items-center">
         {edit ? (
-          <div className="">
-            <input value={updateInput} type="text"
-              onChange={handleUpdateInput} onKeyUp={handleKeyupBtn} onBlur={handleUpdateInputBlur} className={` border border-gray-400 text-sm w-[280px] py-1 px-3`} />
-          </div>
+          <EditInput updateInput={updateInput} handleUpdateInput={handleUpdateInput} handleUpdateInputBlur={handleUpdateInputBlur} handleKeyupBtn={handleKeyupBtn} />
         ) : (
           <div className="content flex items-center gap-3">
             <input
@@ -51,7 +48,7 @@ const List = ({ id, job, isDone, deleteTask, doneTask, updateTaskJob }) => {
             />
             <label
               htmlFor={`list` + id}
-              className={`${isDone && " opacity-80"} select-none`}
+              className={`${isDone && " line-through opacity-80"} select-none`}
             >
               {job}
             </label>

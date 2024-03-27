@@ -13,7 +13,7 @@ import AccordionGroup from "./components/AccordionGroup";
 const App = () => {
   const [tasks, setTask] = useState([
     { id: 1, job: "Complete homework", isDone: false },
-    { id: 2, job: "Go for a run", isDone: true },
+    { id: 2, job: "Go for a run", isDone: false },
     { id: 3, job: "Read a book", isDone: false },
   ]);
 
